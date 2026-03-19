@@ -230,6 +230,8 @@
 @media (max-width: 600px) {
     #hero {
         flex-direction: column;
+        background-attachment: scroll;
+        animation: none;
     }
 
     .brand-container {
@@ -308,6 +310,8 @@
 @media (max-height: 500px) and (orientation: landscape) {
     #hero {
         flex-direction: column;
+        background-attachment: scroll;
+        animation: none;
     }
 
     .brand-container {
