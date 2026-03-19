@@ -1,0 +1,108 @@
+#about {
+    width: 100%;
+    /* Use min-height so it's at least the full height of the screen */
+    min-height: 100vh;
+
+    /* This ensures padding doesn't add to the height, keeping it exactly 100vh */
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #000000;
+    color: white;
+    padding: 80px 5%;
+    /* Top/Bottom padding for mobile breathing room */
+}
+
+.about-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    /* Occupy the full flex height */
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+/* LEFT SIDE: Text styling */
+.about-text {
+    flex: 1.2;
+    /* Give text slightly more space */
+}
+
+.about-text h2 {
+    text-align: left;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    /* Responsive font size */
+    margin-bottom: 25px;
+    color: #00bcd4;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.about-text .description p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #eee;
+    /* Slightly brighter for better readability on black */
+}
+
+/* RIGHT SIDE: Circular frame styling */
+.about-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-frame {
+    /* Set a responsive size so it doesn't break on smaller laptops */
+    width: min(450px, 40vw);
+    height: min(450px, 40vw);
+    border-radius: 50%;
+    border: 10px solid #222;
+    overflow: hidden;
+    box-shadow: 0 0 60px rgba(0, 188, 212, 0.15);
+    transition: all 0.5s ease;
+}
+
+.circle-frame:hover {
+    transform: scale(1.03);
+    border-color: #00bcd4;
+    /* Circle border turns blue on hover */
+}
+
+.circle-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* RESPONSIVE: Stack them on top of each other on mobile */
+@media (max-width: 900px) {
+    #about {
+        height: auto;
+        /* Allow it to grow if text is long on mobile */
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .about-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .about-text h2 {
+        text-align: center;
+    }
+
+    .circle-frame {
+        width: 280px;
+        height: 280px;
+    }
+}

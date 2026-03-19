@@ -1,0 +1,14 @@
+#skills {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+#skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+#skills li {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}

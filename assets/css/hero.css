@@ -1,0 +1,369 @@
+/* --- HERO SECTION RE-DESIGN --- */
+
+#hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.9);
+    animation: backgroundZoom 20s infinite alternate;
+    /* Slow cinematic zoom */
+}
+
+@keyframes backgroundZoom {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+.hero-tagline {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #00bcd4;
+    margin-bottom: 10px;
+    font-weight: 700;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards 0.5s;
+}
+
+.hero-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 20px;
+    color: white;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards 0.8s;
+}
+
+.hero-title span {
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    /* Hollow text effect */
+}
+
+.hero-desc {
+    font-size: 1.2rem;
+    color: #ccc;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards 1.1s;
+}
+
+/* --- BUTTONS --- */
+
+.hero-btn-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards 1.4s;
+}
+
+.hero-btn-main {
+    padding: 15px 35px;
+    background: #00bcd4;
+    color: #111;
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-radius: 50px;
+    transition: 0.3s all ease;
+    box-shadow: 0 0 20px rgba(0, 188, 212, 0.4);
+}
+
+.hero-btn-main:hover {
+    transform: scale(1.05);
+    background: #fff;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+}
+
+.hero-btn-outline {
+    padding: 15px 35px;
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-radius: 50px;
+    transition: 0.3s all ease;
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-btn-outline span {
+    display: inline-block;
+    transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.hero-btn-outline::before {
+    content: attr(data-hover);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(150%);
+    transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* @media (hover: hover) restricts hover effects strictly to devices with a mouse cursor */
+@media (hover: hover) {
+    .hero-btn-outline:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .hero-btn-outline:hover span {
+        transform: translateX(-250%);
+    }
+
+    .hero-btn-outline:hover::before {
+        transform: translateX(0);
+    }
+}
+
+/* --- SCROLL INDICATOR --- */
+
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    width: 2px;
+    height: 60px;
+    background: linear-gradient(to bottom, #00bcd4, transparent);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scroll-down::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background: #fff;
+    animation: scrollMove 2s infinite;
+}
+
+@keyframes scrollMove {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- BRANDING & RESPONSIVE DESIGN --- */
+
+/* Tablet & Large Mobile Landscape */
+@media (max-width: 992px) {
+    .brand-container {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .logo-img {
+        width: 60px;
+        height: auto;
+    }
+
+    .brand-name {
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-title {
+        font-size: clamp(3rem, 7vw, 5rem);
+    }
+}
+
+/* Mobile Portrait */
+@media (max-width: 600px) {
+    #hero {
+        flex-direction: column;
+    }
+
+    .brand-container {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: auto;
+        justify-content: center;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .logo-img {
+        width: 100px;
+        height: auto;
+    }
+
+    .brand-name {
+        display: none;
+    }
+
+    .hero-content {
+        padding: 0 15px;
+        margin-top: 0;
+    }
+
+    .hero-tagline {
+        font-size: 0.85rem;
+        letter-spacing: 3px;
+    }
+
+    .hero-title {
+        font-size: clamp(2.2rem, 10vw, 3rem);
+        margin-bottom: 15px;
+    }
+
+    .hero-desc {
+        font-size: 0.95rem;
+        margin-bottom: 30px;
+    }
+
+    .hero-btn-container {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .hero-btn-main,
+    .hero-btn-outline {
+        width: 220px;
+        padding: 12px 0;
+        text-align: center;
+    }
+
+    .scroll-down {
+        bottom: 15px;
+        height: 50px;
+    }
+}
+
+/* Very Small Mobile Portrait */
+@media (max-width: 380px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-desc {
+        font-size: 0.85rem;
+    }
+}
+
+/* Mobile Landscape */
+@media (max-height: 500px) and (orientation: landscape) {
+    #hero {
+        flex-direction: column;
+    }
+
+    .brand-container {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: auto;
+        justify-content: center;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+
+    .logo-img {
+        width: 55px;
+        height: auto;
+    }
+
+    .brand-name {
+        display: none;
+    }
+
+    .hero-content {
+        margin-top: 0;
+    }
+
+    .hero-tagline {
+        font-size: 0.8rem;
+        margin-bottom: 5px;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+    }
+
+    .hero-desc {
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+    }
+
+    .hero-btn-container {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .hero-btn-main,
+    .hero-btn-outline {
+        padding: 10px 25px;
+        width: auto;
+        font-size: 0.85rem;
+    }
+
+    .scroll-down {
+        display: none;
+    }
+}
