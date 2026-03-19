@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/hero.css">
+    <link rel="stylesheet" href="assets/css/about.css">
+    <link rel="stylesheet" href="assets/css/works.css">
+    <link rel="stylesheet" href="assets/css/skills.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+</head>
+
+<body>
+
+    <section id="hero"
+        style="background-image: radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 100%), url('assets/img/back.jpg');">
+
+        <div class="brand-container">
+            <img src="assets/img/logo1.png" alt="John Mark Logo" class="logo-img">
+            <span class="brand-name">John Mark Silvosa</span>
+        </div>
+
+        <div class="hero-content">
+            <p class="hero-tagline">Visual Storyteller</p>
+            <h1 class="hero-title">John Mark <span>Silvosa</span></h1>
+            <p class="hero-desc">Crafting cinematic edits with 4 years of experience in CapCut & Alight Motion.</p>
+            <div class="hero-btn-container">
+                <a href="#works" class="hero-btn-main">Explore My Works</a>
+                <a href="#contact" class="hero-btn-outline" data-hover="Contact Me"><span>Start Project</span></a>
+            </div>
+        </div>
+
+        <div class="scroll-down"></div>
+    </section>
+
+    <section id="about">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>About Me</h2>
+                <div class="description">
+                    <p>
+                        I’m a video editor with almost 4 years of experience using <strong>CapCut</strong> and
+                        <strong>Alight Motion</strong>. I specialize in anime, K-pop, and K-drama edits,
+                        focusing on smooth transitions, beat sync, and visual effects.
+                    </p>
+                    <p>
+                        I’m always improving my skills and exploring new editing techniques to create
+                        engaging videos that resonate with the audience.
+                    </p>
+                </div>
+            </div>
+
+            <div class="about-visual">
+                <div class="circle-frame">
+                    <img src="assets/img/me.png" alt="John Mark Silvosa">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="works">
+        <h2>My Works</h2>
+        <div class="works-grid">
+
+            <div class="work-card">
+                <video autoplay muted loop playsinline>
+                    <source src="assets/img/anim.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="card-overlay">Anime Edit</div>
+            </div>
+
+            <div class="work-card">
+                <video autoplay muted loop playsinline>
+                    <source src="assets/img/kpop1.webm" type="video/webm">
+                </video>
+                <div class="card-overlay">K-Pop Edit</div>
+            </div>
+
+            <div class="work-card">
+                <video autoplay muted loop playsinline>
+                    <source src="assets/img/kpop.webm" type="video/webm">
+                </video>
+                <div class="card-overlay">My Edit</div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>My Skills</h2>
+        <div class="skills-container">
+            <div class="skill-item">
+                <img src="assets/img/cap.png" alt="CapCut">
+                <span>CapCut</span>
+            </div>
+
+            <div class="skill-item">
+                <img src="assets/img/da.png" alt="DaVinci Resolve">
+                <span>DaVinci Resolve</span>
+            </div>
+
+            <div class="skill-item">
+                <img src="assets/img/alight.png" alt="Alight Motion">
+                <span>Alight Motion</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
+                <p>Ready to take your videos to the next level? Let's collaborate and create something amazing.</p>
+
+                <div class="info-details">
+                    <div class="info-item">
+                        <span>Email:</span>
+                        <p>johnmarksilvosa0@email.com</p>
+                    </div>
+                    <div class="info-item">
+                        <span>Social:</span>
+                        <div class="social-links">
+                            <a href="https://www.tiktok.com/@itzme_jmark" target="_blank" rel="noopener"
+                                aria-label="TikTok">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 448 512"
+                                    fill="currentColor">
+                                    <path
+                                        d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                <!-- Replace with your actual Web3Forms access key to receive emails -->
+                <input type="hidden" name="access_key" value="ce193377-3836-427f-b92c-84090bf921a0">
+
+                <div class="input-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="input-group">
+                    <textarea name="message" placeholder="Tell me about your project..." rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+        <div class="contact-footer">
+            &copy; 2026 JOHN MARK SILVOSA | ALL RIGHTS RESERVED.
+        </div>
+    </section>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
